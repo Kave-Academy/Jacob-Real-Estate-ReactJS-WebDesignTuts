@@ -15,9 +15,9 @@ const Navbar = ({BurgerColour}) => {
     </li>)
   }
 
-  const [isNavOpen, setIsNavOpen] = useState(false)
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
-  return <div className={styles.navbar_container}>
+  return ( <div className={styles.navbar_container}>
     <nav>
       {/* LOGO */}
       <div className={styles.brand_logo}>
@@ -27,15 +27,13 @@ const Navbar = ({BurgerColour}) => {
       <div
         className={styles.mobile_menu}
         style={{color:BurgerColour}}
-        onclick={() => setIsNavOpen(!isNavOpen)}
+        onClick={() => setIsNavOpen(!isNavOpen)}
       >
         <FaBars />
       </div>
       {/* NAV */}
       <ul className={`${isNavOpen ? styles.ul_active : undefined} ${styles.navbar_ul }`}>
-        <div
-          className={styles.mobile_close}
-          onclick={() => setIsNavOpen(!isNavOpen)}
+        <div className={styles.mobile_close} onClick={() => setIsNavOpen(!isNavOpen)}
         >
           <FaTimes />
         </div>
@@ -52,12 +50,13 @@ const Navbar = ({BurgerColour}) => {
       </ul>
 
       {/* LOGIN */}
-      <Link to="/auth" classname={styles.login_container}>
+      <Link to="/auth" className={styles.login_container}>
         <span style={{color:BurgerColour}}>Login</span>
         <BsArrowRight style={{color:BurgerColour}} />
       </Link>
     </nav>
-  </div>;
+  </div>
+  );
 };
 
 export default Navbar;
